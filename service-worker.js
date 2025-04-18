@@ -4,7 +4,6 @@ const urlsToCache = [
 "/index.html",
 "/styles.css",
 "/app.js",
-"/logo.png",
 "/destinations.html",
 "/blog.html",
 "/contact.html",
