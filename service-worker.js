@@ -14,7 +14,12 @@ const urlsToCache = [
 "/reviews.html",
 "/script.js",
 "/images/andamn.webp",
-"./images/bali.webp"
+"./images/bali.webp",
+"./images/logo.webp",
+"./images/beach.webp",
+"./images/darjeeling.webp",
+"./images/dharamshala.webp",
+"./images/dubai.webp"
 ];
 // Install event: Caches the assets
 self.addEventListener("install", (event) => {
