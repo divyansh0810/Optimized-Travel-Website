@@ -27,7 +27,10 @@ const urlsToCache = [
 "./images/jaipur.webp",
 "./images/ladakh.webp",
 "./images/ladakh1.webp",
-"./images/ladakh2.webp"
+"./images/ladakh2.webp",
+"./images/mountain.webp",
+"./images/rishikesh.webp",
+"./images/taj-mahal.webp"
 
 ];
 // Install event: Caches the assets
