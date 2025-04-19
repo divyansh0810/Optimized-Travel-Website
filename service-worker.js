@@ -40,43 +40,33 @@ const urlsToCache = [
 
 // ✅ Install: Cache all assets with safe logging
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("⚙️ Service Worker: Caching assets...");
-      return Promise.allSettled(
-        urlsToCache.map((url) =>
-          cache.add(url).then(() => {
-            console.log(`✅ Cached: ${url}`);
-          }).catch((err) => {
-            console.error(`❌ Failed to cache: ${url}`, err);
-          })
-        )
-      );
-    })
-  );
+event.waitUntil(
+caches.open(CACHE_NAME).then((cache) => {
+console.log("Caching assets");
+return cache.addAll(urlsToCache);
+})
+);
 });
-
-// ✅ Fetch: Serve from cache first, then network
+// Fetch event: Serves cached assets
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+event.respondWith(
+caches.match(event.request).then((response) => {
+return response || fetch(event.request);
+})
+);
 });
-
-// ✅ Activate: Clear old caches
+// Activate event: Clears old caches
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            console.log("🧹 Deleting old cache:", cache);
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
-  );
+event.waitUntil(
+caches.keys().then((cacheNames) => {
+return Promise.all(
+cacheNames.map((cache) => {
+if (cache !== CACHE_NAME) {
+console.log("Deleting old cache:", cache);
+return caches.delete(cache);
+}
+})
+);
+})
+);
 });
