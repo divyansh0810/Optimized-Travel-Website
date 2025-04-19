@@ -4,7 +4,6 @@ const urlsToCache = [
 "/index.html",
 "/styles.css",
 "/app.js",
-"/logo.png",
 "/destinations.html",
 "/blog.html",
 "/contact.html",
@@ -34,7 +33,7 @@ const urlsToCache = [
 "./images/ladakh2.webp",
 "./images/mountain.webp",
 "./images/rishikesh.webp",
-"./images/taj-mahal.webp",
+"./images/taj-mahal.webp"
 ];
 // Install event: Caches the assets
 self.addEventListener("install", (event) => {
