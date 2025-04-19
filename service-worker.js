@@ -19,7 +19,21 @@ const urlsToCache = [
 "./images/beach.webp",
 "./images/darjeeling.webp",
 "./images/dharamshala.webp",
-"./images/dubai.webp"
+"./images/dubai.webp",
+"./images/goa.webp",
+"./images/goa1.webp",
+"./images/goa2.webp",
+"./images/hero.webp",
+"./images/jaipur.webp",
+"./images/kerala.webp",
+"./images/kerala1.webp",
+"./images/kerala2.webp",
+"./images/ladakh.webp",
+"./images/ladakh1.webp",
+"./images/ladakh2.webp",
+"./images/mountain.webp",
+"./images/rishikesh.webp",
+"./images/taj-mahal.webp"
 ];
 // Install event: Caches the assets
 self.addEventListener("install", (event) => {
