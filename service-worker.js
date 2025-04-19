@@ -33,7 +33,8 @@ const urlsToCache = [
 "./images/taj-mahal.webp",
 "./images/kerala1.webp",
 "./images/kerala2.webp",
-"./images/kerala .webp"
+"./images/kerala .webp",
+"https://i.pravatar.cc/907"
 
 ];
 // Install event: Caches the assets
