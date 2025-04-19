@@ -3,7 +3,18 @@ const urlsToCache = [
 "/",
 "/index.html",
 "/styles.css",
-"/app.js"
+"/app.js",
+"/destinations.html",
+"/blog.html",
+"/contact.html",
+"/gallery.html",
+"login.html",
+"/packages.html",
+"/register.html",
+"/reviews.html",
+"/script.js",
+"/images/andamn.webp",
+"./images/bali.webp"
 ];
 // Install event: Caches the assets
 self.addEventListener("install", (event) => {
