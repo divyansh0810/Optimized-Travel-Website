@@ -38,7 +38,6 @@ const urlsToCache = [
   "/images/taj-mahal.webp"
 ];
 
-// ✅ Install: Cache all assets with safe logging
 self.addEventListener("install", (event) => {
 event.waitUntil(
 caches.open(CACHE_NAME).then((cache) => {
