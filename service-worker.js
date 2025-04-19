@@ -33,8 +33,7 @@ const urlsToCache = [
 "./images/taj-mahal.webp",
 "./images/kerala1.webp",
 "./images/kerala2.webp",
-"./images/kerala .webp",
-"https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg"
+"./images/kerala .webp"
 
 ];
 // Install event: Caches the assets
