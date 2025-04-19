@@ -32,7 +32,8 @@ const urlsToCache = [
 "./images/rishikesh.webp",
 "./images/taj-mahal.webp",
 "./images/kerala1.webp",
-"./images/kerala2.webp"
+"./images/kerala2.webp",
+"./images/kerala .webp"
 
 ];
 // Install event: Caches the assets
