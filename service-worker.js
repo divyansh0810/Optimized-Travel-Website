@@ -30,7 +30,8 @@ const urlsToCache = [
 "./images/ladakh2.webp",
 "./images/mountain.webp",
 "./images/rishikesh.webp",
-"./images/taj-mahal.webp"
+"./images/taj-mahal.webp",
+  "https://i.pravatar.cc/907"
 
 ];
 // Install event: Caches the assets
