@@ -14,8 +14,9 @@ const urlsToCache = [
 "/register.html",
 "/reviews.html",
 "/script.js",
+  "/images/andamn.webp",
 "/images/logo.webp",
-"/images/andamn.webp",
+
 "./images/bali.webp",
 "./images/beach.webp",
 "/images/darjeeling.webp",
