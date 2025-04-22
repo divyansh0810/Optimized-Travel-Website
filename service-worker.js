@@ -12,6 +12,7 @@ const urlsToCache = [
 "/packages.html",
 "/register.html",
 "/reviews.html",
+"/offline.html",
 "/script.js",
 "/images/andamn.webp",
 "./images/bali.webp",
