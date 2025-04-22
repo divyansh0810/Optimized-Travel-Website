@@ -45,26 +45,42 @@ return cache.addAll(urlsToCache);
 })
 );
 });
-// Fetch event: Serves cached assets
+// Fetch event: Serve cached or fallback page
 self.addEventListener("fetch", (event) => {
-event.respondWith(
-caches.match(event.request).then((response) => {
-return response || fetch(event.request);
-})
-);
-});
-// Activate event: Clears old caches
+    event.respondWith(
+      caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(event.request).then((cachedResponse) => {
+          const fetchPromise = fetch(event.request)
+            .then((networkResponse) => {
+              // Only update cache if response is valid
+              if (networkResponse && networkResponse.status === 200) {
+                cache.put(event.request, networkResponse.clone());
+              }
+              return networkResponse;
+            })
+            .catch(() => {
+              // Network failed, return cached if exists, or offline.html
+              return cachedResponse || caches.match("/offline.html");
+            });
+  
+          // Return cached version immediately, then update in background
+          return cachedResponse || fetchPromise;
+        });
+      })
+    );
+  });
+// Activate event: Clean up old caches
 self.addEventListener("activate", (event) => {
-event.waitUntil(
-caches.keys().then((cacheNames) => {
-return Promise.all(
-cacheNames.map((cache) => {
-if (cache !== CACHE_NAME) {
-console.log("Deleting old cache:", cache);
-return caches.delete(cache);
-}
-})
-);
-})
-);
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log("Deleting old cache:", cache);
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
 });
