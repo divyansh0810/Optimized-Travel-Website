@@ -54,21 +54,16 @@
         <p>&copy; 2025 Wanderlust Explorers | All Rights Reserved</p>
     </footer>
 
-    <script>
-        // Capture the form submission
-        document.getElementById("login-form").addEventListener("submit", function (e) {
-            e.preventDefault();
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-            // Get the username input value
-            const username = document.getElementById("username").value;
-
-            // Store the username in localStorage
-            localStorage.setItem("loggedInUser", username);
-
-            // Redirect to the dashboard (or any other page where you want to show the username)
-            window.location.href = "dashboard.html";  // Redirect to your dashboard page
-        });
-    </script>
-
+        const username = document.getElementById("username").value;
+        localStorage.setItem("loggedInUser", username);
+        window.location.href = "dashboard.html";
+    });
+});
+</script>
 </body>
 </html>
