@@ -38,9 +38,10 @@
     <div class="form-container">
         <div class="form-box">
             <h2>Login</h2>
-            <form id="login-form" action="/login" method="POST">
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="password" name="password" placeholder="Password" required>
+            <form id="login-form">
+                <!-- Changed email input to username -->
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
             <div class="form-footer">
@@ -53,8 +54,21 @@
         <p>&copy; 2025 Wanderlust Explorers | All Rights Reserved</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="app.js"></script>
-    <script src="service-worker.js"></script>
+    <script>
+        // Capture the form submission
+        document.getElementById("login-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get the username input value
+            const username = document.getElementById("username").value;
+
+            // Store the username in localStorage
+            localStorage.setItem("loggedInUser", username);
+
+            // Redirect to the dashboard (or any other page where you want to show the username)
+            window.location.href = "dashboard.html";  // Redirect to your dashboard page
+        });
+    </script>
+
 </body>
 </html>
