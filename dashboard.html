@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover amazing travel destinations, guides, and tips. Plan your next adventure with the best travel deals, itineraries, and expert advice.">
     <meta name="keywords" content="travel, best travel destinations, travel tips, vacation planning, adventure travel, hotels, flights, tourism">
-    <title>Contact Us | Wanderlust Explorers</title>
+    <title>Dashboard | Wanderlust Explorers</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -35,22 +35,26 @@
         </nav>
     </header>
 
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </div>
-    </section>
+    <div class="dashboard-container">
+        <h2 id="welcomeMessage">Hi, you are logged in as <span id="user-name"></span></h2>
+    </div>
 
     <footer>
         <p>&copy; 2025 Wanderlust Explorers | All Rights Reserved</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="app.js"></script>
-    <script src="service-worker.js"></script>
+    <script>
+        // Retrieve the username from localStorage
+        const username = localStorage.getItem("loggedInUser");
+
+        // Check if the user is logged in
+        if (username) {
+            // Display the username in the dashboard
+            document.getElementById("user-name").textContent = username;
+        } else {
+            // If not logged in, show a message (you can also redirect them back to login)
+            document.getElementById("welcomeMessage").textContent = "You are not logged in.";
+        }
+    </script>
 </body>
 </html>
